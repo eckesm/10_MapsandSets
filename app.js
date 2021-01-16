@@ -48,13 +48,16 @@ vowelCount('Colt') // Map { 'o' => 1 }     */
 
 const vowelCount = str => {
 	const vowelArr = [ ...str ];
-	const vowelMap = new Map();
+  const vowelMap = new Map();
+  const vowels ="aeiou"
 	vowelArr.forEach(char => {
-		if (vowelMap.has(char)) {
-			vowelMap.set(char, vowelMap.get(char) + 1);
-		} else {
-			vowelMap.set(char, 1);
-		}
+    if (vowels.includes(char)) {
+      if (vowelMap.has(char)) {
+        vowelMap.set(char, vowelMap.get(char) + 1);
+      } else {
+        vowelMap.set(char, 1);
+      }
+    }
 	});
 	return vowelMap;
 };
